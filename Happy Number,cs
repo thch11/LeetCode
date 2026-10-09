@@ -1,0 +1,36 @@
+public class Solution
+{
+    public bool IsHappy(int n)
+    {
+        if (n == 1)
+            return true;
+        if (n < 10 && n != 7)
+            return false;
+        int temp = n;
+        List<int> numbList = new List<int>();
+        int lastloopresult = 0;
+        while (true)
+        {
+            while (0 < temp)
+            {
+                numbList.Add(temp % 10);
+                temp /= 10;
+            }
+            for (int i = 0; i < numbList.Count; i++)
+            {
+                temp += numbList[i] * numbList[i];
+            }
+            if ((temp < 10 && temp != 1 && temp != 7))
+                return false;
+            else if (temp == lastloopresult)
+                return false;
+            else if (temp == 1)
+                return true;
+            lastloopresult = temp;
+            numbList.Clear();
+        }
+
+
+    }
+}
+//https://leetcode.com/problems/happy-number
