@@ -13,6 +13,7 @@ public class Solution
                 {
                     NumberAlreadyExists = true;
                     numbList[j].count++;
+                    break;
                 }
             }
             if (!NumberAlreadyExists)
