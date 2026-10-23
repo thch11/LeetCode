@@ -41,5 +41,55 @@ public class Solution
         return output;
     }
 }
-
 //https://leetcode.com/problems/zigzag-conversion
+
+//FIXED CODE WITH AI:
+
+//public class Solution
+//{
+//    public string Convert(string s, int numRows)
+//    {
+//        if (numRows <= 0)
+//            return "";
+//        if (numRows == 1 || numRows >= s.Length)
+//            return s;
+
+//        int skip = 2 * numRows - 2;
+//        int endSkip = skip;
+//        string output = "";
+//        int start = 0;
+
+//        while (skip > 0)
+//        {
+//            bool Skipperinos = true;
+//            for (int i = start; i < s.Length;)
+//            {
+//                output = output + s[i];
+
+//                if (start > 0 && skip < endSkip)
+//                {
+//                    if (Skipperinos)
+//                        i += skip;
+//                    else
+//                        i += (endSkip - skip);
+
+//                    Skipperinos = !Skipperinos;
+//                }
+//                else
+//                {
+//                    i += endSkip;
+//                }
+//            }
+
+//            start++;
+//            skip -= 2;
+//        }
+
+//        for (int i = start; i < s.Length; i += endSkip)
+//        {
+//            output = output + s[i];
+//        }
+
+//        return output;
+//    }
+//}
